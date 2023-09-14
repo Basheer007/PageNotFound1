@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+.container {
+  min-height: 100vh;
+  background: url("haunted-img.avif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: -2;
+  display: grid;
+  place-items: center;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.title {
+  font-size: 4rem;
+  color: white;
+  text-shadow: 2px 2px 5px #fff, -2px -2px 5px #fff;
+  position: absolute;
+  z-index: 1;
+}
+#blink1 {
+  animation: blink1 1ms linear infinite;
+}
+#blink2 {
+  animation: blink2 0.1s linear infinite;
+}
+
+@keyframes blink1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.light {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    transparent 5%,
+    rgba(0, 0, 0, 0.95) 30%
+  );
+}
+@media all and (max-width: 520px) {
+  .title {
+    font-size: 3.5rem;
+  }
+}
+@media all and (max-width: 450px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+@media all and (max-width: 450px) {
+  .title {
+    font-size: 2rem;
+  }
+}
